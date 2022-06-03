@@ -3,7 +3,12 @@ const path = require("path")
 module.exports = {
   mode: process.env.NODE_ENV,
   entry: {
-    index: ["./src/index.ts"],
+    index: path.resolve(__dirname, "./src/index.ts"),
+  },
+  output: {
+    filename: "[name].js",
+    path: path.resolve(__dirname, "public", "dist"),
+    clean: true,
   },
   module: {
     rules: [
@@ -16,9 +21,5 @@ module.exports = {
   },
   resolve: {
     extensions: [".tsx", ".ts", ".js"],
-  },
-  output: {
-    filename: "[name].js",
-    path: path.resolve(__dirname, "public", "dist"),
   },
 }

@@ -9,23 +9,17 @@
   <body>
     <div id="container">
       <h2 id="title">Ta funcionando!!!!</h2>
-
-      <button id="create">Create</button>
     </div>
 
-    <script>
-      const buttonCreate = document.querySelector("#create")
-
-      buttonCreate.addEventListener("click", async function () {
-        try {
-          const response = await fetch("http://localhost:3000/user/create", {
-            method: "post",
-          })
-
-          console.log(await response.json())
-        } catch (error) {}
-      })
-    </script>
-    <!-- <script src="./dist/index.js"></script> -->
+    <div x-data="create()">
+      <button x-on:click="createUser">Create</button>
+    </div>
+    <!-- <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/2.3.0/alpine.js"
+      integrity="sha512-nIwdJlD5/vHj23CbO2iHCXtsqzdTTx3e3uAmpTm4x2Y8xCIFyWu4cSIV8GaGe2UNVq86/1h9EgUZy7tn243qdA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script> -->
+    <script src="./dist/index.js"></script>
   </body>
 </html>
